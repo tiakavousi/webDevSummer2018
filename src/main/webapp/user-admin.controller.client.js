@@ -56,7 +56,7 @@
         });
     }
     function deleteUser(event){
-        console.log(event);
+       
         var $button =$(event.currentTarget);
         var id = $button.attr("id");
 

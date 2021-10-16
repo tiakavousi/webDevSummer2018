@@ -24,7 +24,7 @@
           firstName: $firstName.val(),
           lastName: $lastName.val()
         };
-        console.log(currentUser.id);
+        
         fetch(`/api/user/${currentUser.id}`, {
             method:"put",
             headers: {'content-type': 'application/json'},
