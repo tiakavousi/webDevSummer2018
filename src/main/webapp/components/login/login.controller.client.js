@@ -1,4 +1,5 @@
 (function(){
+    var userServiceClient= new UserServiceClient();
     var $username,
         $password,
         $loginBtn;
@@ -15,15 +16,10 @@
             "username" : $username.val(),
             "password" : $password.val()
         };
-        
-        fetch("/login", {
-            method:"post",
-            headers:{"content-type": "application/json"},
-            body: JSON.stringify(user),
-            credentials:"include"
-        }).then(navigateToProfile);
+        userServiceClient.login(user)
+        .then(navigateToProfile);
     }
     function navigateToProfile(){
-        window.location.href = "./profile.template.client.html"    
+        window.location.href = "../profile/profile.template.client.html"    
     }
 })();

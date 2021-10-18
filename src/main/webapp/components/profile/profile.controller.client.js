@@ -1,4 +1,5 @@
 (function(){
+    var userServiceClient = new UserServiceClient();
     var $username,
         $firstName, 
         $lastName, 
@@ -13,7 +14,7 @@
 
         $updateBtn.click(updateUser);
 
-        profile()
+        userServiceClient.profile()
             .then(renderUser);
     }
 
@@ -25,12 +26,7 @@
           lastName: $lastName.val()
         };
         
-        fetch(`/api/user/${currentUser.id}`, {
-            method:"put",
-            headers: {'content-type': 'application/json'},
-            body: JSON.stringify(user),
-            credentials: 'include'
-        });
+        userServiceClient.findUserByUserId(user);
     }
 
     function renderUser(user){
@@ -38,12 +34,5 @@
         $username.val(user.username);
         $firstName.val(user.firstName);
         $lastName.val(user.lastName);
-    }
-
-    function profile() {
-        return fetch('/profile', {
-          'credentials': 'include'
-        })
-        .then(response => response.json());
     }
 })();

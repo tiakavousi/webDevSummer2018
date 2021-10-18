@@ -1,5 +1,5 @@
 (function(){
-    console.log("hello world");
+    var userServiceClient = new UserServiceClient();
     var registerBtn = $("#registerBtn");
     var usernameFld = $("#username");
     var passwordFld = $("#password");
@@ -12,18 +12,12 @@
         var userObj = {
             username: usernameStr,
             password: passwordStr
-        };     
-        fetch("/register",
-                {
-                    method:"POST",
-                    headers:{"Content-Type":"application/json"},
-                    body: JSON.stringify(userObj),
-                    "credentials": "include"
-                }
-        ).then(successfulRegisteration, failedRegisteration)
+        };
+        userServiceClient.register(userObj)     
+        .then(successfulRegisteration, failedRegisteration)
     }
     function successfulRegisteration(){
-        window.location.href = "./profile.template.client.html";
+        window.location.href = "../profile/profile.template.client.html";
     }
     function failedRegisteration(){
         alert("oops registration failed!");

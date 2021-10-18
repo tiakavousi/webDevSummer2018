@@ -1,23 +1,17 @@
+
 (function(){
+    var userServiceClient = new UserServiceClient();
     function init(){
-        findAllUsers()
+        userServiceClient.findAllUsers()
         .then(renderUsers);
     }
-    init();
-
-    function findAllUsers(){
-        return fetch("/api/user")
-        .then(response =>{
-            return response.json();
-        })
-    }
+    init()
 
     function renderUsers(users){
         var $tbody = $("tbody");
         $tbody.empty();
         users.forEach(user => {
             let $tr = $("<tr>");
-
             let $td = $("<td>");
             $td.append(user.firstName);
             $tr.append($td);
@@ -50,20 +44,17 @@
             var editBtn = $("<button class='btn btn-primary'>Edit</button>");
             $td.append(editBtn);
             $tr.append($td);
-
             $tbody.append($tr);
 
         });
     }
-    function deleteUser(event){
-       
+
+    function deleteUser(event){ 
         var $button =$(event.currentTarget);
         var id = $button.attr("id");
 
-        fetch(`/api/user/${id}`, {
-            method:"DELETE",
-        })
-            .then(findAllUsers)
-            .then(renderUsers);
+        userServiceClient.deleteUser(id)
+        .then(userServiceClient.findAllUsers)
+        .then(renderUsers);
     }
 })();
