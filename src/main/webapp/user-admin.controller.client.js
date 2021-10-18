@@ -43,12 +43,12 @@
             $tr.append($td);
 
             $td = $("<td>");
-            var deleteBtn = $("<button>Delete</button>");
+            var deleteBtn = $("<button class='btn btn-primary'>Delete</button>");
             deleteBtn.click(deleteUser);
             deleteBtn.attr("id", user.id);
             $td.append(deleteBtn);
-            var createBtn = $("<button>Create</button>");
-            $td.append(createBtn);
+            var editBtn = $("<button class='btn btn-primary'>Edit</button>");
+            $td.append(editBtn);
             $tr.append($td);
 
             $tbody.append($tr);
