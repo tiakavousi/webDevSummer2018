@@ -1,6 +1,24 @@
 input {
     margin-bottom: 10px;
 }
-button{
-    margin-left: 10px;
+
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+a{
+    text-decoration: none;
+}
+.centered-card{
+    width:50%;
+    margin: auto;
+}
+.wide-btn{
+    width:100%;
+}
+.margined-div{
+    margin-top: 2%;
 }
