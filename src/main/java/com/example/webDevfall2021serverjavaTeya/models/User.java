@@ -14,6 +14,12 @@ public class User {
 	private String password; 
 	private String firstName; 
 	private String lastName;
+	private String role;
+	private String email;
+	private String phoneNumber;
+	private String dateOfBirth;
+
+	
 	public String getUsername() {
 		return username;
 	}
@@ -43,5 +49,29 @@ public class User {
 	}
 	public void setId(Integer id) {
 		this.id = id;
+	}
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+	public String getDateOfBirth() {
+		return dateOfBirth;
+	}
+	public void setDateOfBirth(String dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
 }

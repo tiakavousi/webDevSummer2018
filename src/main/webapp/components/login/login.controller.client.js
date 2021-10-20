@@ -14,7 +14,7 @@
     function login(){
         var user = {
             "username" : $username.val(),
-            "password" : $password.val()
+            "password" : $password.val(),
         };
         userServiceClient.login(user)
         .then(navigateToProfile);

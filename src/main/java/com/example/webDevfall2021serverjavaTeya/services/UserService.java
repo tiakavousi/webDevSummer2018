@@ -56,6 +56,9 @@ public class UserService {
 			User user = optional.get();
 			user.setFirstName(newUser.getFirstName());
 			user.setLastName(newUser.getLastName());
+			user.setEmail(newUser.getEmail());
+			user.setDateOfBirth(newUser.getDateOfBirth());
+			user.setPhoneNumber(newUser.getPhoneNumber());
 			return userRepository.save(user);
 		}
 		return null;

@@ -33,7 +33,7 @@
             $tr.append($td);
 
             $td = $("<td>");
-            $td.append("Student");
+            $td.append(user.role);
             $tr.append($td);
 
             $td = $("<td>");
