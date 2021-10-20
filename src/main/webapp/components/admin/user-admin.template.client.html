@@ -44,41 +44,46 @@
                 <caption class= "caption-top">List of users</caption>
                 <thead> 
                     <tr>
+                        <th scope="col">Role</th>
                         <th scope="col">First Name</th>
                         <th scope="col">Last Name</th>
                         <th scope="col">Username</th>
                         <th scope="col">Password</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Role</th>
+                        <th scope="col">Phone Number</th>
+                        <th scope="col">Date of birth</th>
                         <th scope="col">&nbsp;</th>
                     </tr>
                     <tr>
-                        <th><input/></th>
-                        <th><input/></th>
-                        <th><input/></th>
-                        <th><input/></th>
-                        <th><input/></th>
                         <th>
                             <select name="role" id="role">
                                 <option value="FACULTY">Faculty</option>
                                 <option value="STUDENT">Student</option>
                             </select>
                         </th>
-                        <td>
+                        <th><input/></th>
+                        <th><input/></th>
+                        <th><input/></th>
+                        <th><input/></th>
+                        <th><input/></th>
+                        <th><input/></th>
+                        <th><input/></th>
+                        <th>
                             <button class='btn btn-primary'>Create</button>
                             <button class='btn btn-primary'>Update</button>
-                        </td>
+                        </th>
                     </tr>
                 </thead>
-                <tbody>
-                    
+                <tbody> 
                     <tr>
+                        <td>Faculty</td>
                         <td>Alice</td>
                         <td>Wonderland</td>
                         <td>alice</td>
                         <td>******</td>
                         <td>alice@wonderland.com</td>
-                        <td>Faculty</td>
+                        <td>+01234567890</td>
+                        <td>12-04-1989</td>
                         <td>
                             <button>Delete</button>
                             <button>Edit</button>

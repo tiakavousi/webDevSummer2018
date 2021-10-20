@@ -13,6 +13,10 @@
         users.forEach(user => {
             let $tr = $("<tr>");
             let $td = $("<td>");
+            $td.append(user.role);
+            $tr.append($td);
+
+            $td = $("<td>");
             $td.append(user.firstName);
             $tr.append($td);
 
@@ -29,13 +33,16 @@
             $tr.append($td);
 
             $td = $("<td>");
-            $td.append("hey@gmail.com");
+            $td.append(user.email);
             $tr.append($td);
 
             $td = $("<td>");
-            $td.append(user.role);
+            $td.append(user.phoneNumber);
             $tr.append($td);
 
+            $td = $("<td>");
+            $td.append(user.dateOfBirth);
+            $tr.append($td);
             $td = $("<td>");
             var deleteBtn = $("<button class='btn btn-primary'>Delete</button>");
             deleteBtn.click(deleteUser);
@@ -48,7 +55,6 @@
 
         });
     }
-
     function deleteUser(event){ 
         var $button =$(event.currentTarget);
         var id = $button.attr("id");
