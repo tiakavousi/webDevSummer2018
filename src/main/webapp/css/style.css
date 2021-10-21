@@ -9,7 +9,7 @@ input {
     flex-wrap: wrap;
     justify-content: space-between;
 }
-a{
+a {
     text-decoration: none;
 }
 .centered-card{
@@ -19,6 +19,13 @@ a{
 .wide-btn{
     width:100%;
 }
+.margined-btn {
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
 .margined-div{
     margin-top: 2%;
+}
+.admin-btn{
+    width:40%;
 }

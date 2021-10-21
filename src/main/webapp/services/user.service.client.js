@@ -1,14 +1,4 @@
-
 class UserServiceClient {
-    // constructor(){
-    //     this.findAllUsers = findAllUsers;
-    //     this.deleteUser = deleteUser;
-    //     this.login = login;
-    //     this.updateUser = this.updateUser;
-    //     this.register = register;
-    //     this.profile = profile;
-    // }
-
     findAllUsers() {
         return fetch("/api/user")
             .then(response => {
@@ -21,6 +11,7 @@ class UserServiceClient {
             method: "DELETE",
         });
     }
+
     login(user){
         return fetch("/login", {
             method:"post",
@@ -38,7 +29,7 @@ class UserServiceClient {
             credentials: 'include'
         });
     }
-        
+    
     profile() { 
         return fetch('/profile', {
             'credentials': 'include'

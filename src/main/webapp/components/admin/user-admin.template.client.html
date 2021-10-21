@@ -39,8 +39,8 @@
             </div>
         </nav>
         <h1>User Admin Table</h1>
-        <div class="table-responsive">
-            <table class="table table-bordered border-dark table-sm table-hover table-striped">
+        <div class="table-responsive main-table">
+            <table class="table table-bordered table-sm table-hover table-striped">
                 <caption class= "caption-top">List of users</caption>
                 <thead> 
                     <tr>
@@ -57,38 +57,26 @@
                     <tr>
                         <th>
                             <select name="role" id="role">
-                                <option value="FACULTY">Faculty</option>
-                                <option value="STUDENT">Student</option>
+                                <option value="faculty">Faculty</option>
+                                <option value="student">Student</option>
                             </select>
                         </th>
-                        <th><input/></th>
-                        <th><input/></th>
-                        <th><input/></th>
-                        <th><input/></th>
-                        <th><input/></th>
-                        <th><input/></th>
-                        <th><input/></th>
+                        
+                        <th><input id="firstName" placeholder="Alice"/></th>
+                        <th><input id="lastName" placeholder="Wonderland"/></th>
+                        <th><input id="username" placeholder="alice"/></th>
+                        <th><input id="password" placeholder="******"/></th>
+                        <th><input id="email" placeholder="alice@wonderland.com"/></th>
+                        <th><input id="phoneNumber" placeholder="+01234567890"/></th>
+                        <th><input id="dateOfBirth" placeholder="12-04-1989"/></th>
                         <th>
-                            <button class='btn btn-primary'>Create</button>
-                            <button class='btn btn-primary'>Update</button>
+                            <button id="createBtn" class='btn btn-primary margined-btn admin-btn'>Create</button>
+                            <button id="updateBtn" class='btn btn-primary margined-btn admin-btn'>Update</button>
                         </th>
                     </tr>
                 </thead>
                 <tbody> 
-                    <tr>
-                        <td>Faculty</td>
-                        <td>Alice</td>
-                        <td>Wonderland</td>
-                        <td>alice</td>
-                        <td>******</td>
-                        <td>alice@wonderland.com</td>
-                        <td>+01234567890</td>
-                        <td>12-04-1989</td>
-                        <td>
-                            <button>Delete</button>
-                            <button>Edit</button>
-                        </td>
-                    </tr>
+        
                 </tbody>
             </table>
         </div>       
