@@ -15,8 +15,11 @@
     function renderUsers(users){
         var $tbody = $("tbody");
         $tbody.empty();
+
         users.forEach(user => {
             let $tr = $("<tr>");
+            $tr.attr("id", "tr"+user.id);
+
             let $td = $("<td contenteditable>");
             $td.append(user.role);
             $td.attr("id", "role" + user.id);
@@ -72,6 +75,7 @@
 
         });
     }
+
     function createUser(){
         var user = {
             role:$('#role').val(),
@@ -86,8 +90,9 @@
         userServiceClient.register(user)
         .then(()=>alert("user has been created"));
     }
+
     function updatePage(){
-        $(".main-table").fadeOut(500).fadeIn(500);
+        $("#main-table").fadeOut(500).fadeIn(500);
         init();
     }
     function deleteUser(event){ 
@@ -112,8 +117,9 @@
             password : $(`#password${id}`).text(),
             dateOfBirth : $(`#dateOfBirth${id}`).text(),
           };
-        
+        console.log(user.role);
           userServiceClient.updateUser(user,id)
           .then(updatePage);
+          //.then($(`tr${id}`).fadeOut(500).fadeIn(500));
     }
 })();
