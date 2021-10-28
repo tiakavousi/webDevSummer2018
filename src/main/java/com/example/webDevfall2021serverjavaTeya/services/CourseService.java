@@ -11,15 +11,16 @@ import com.example.webDevfall2021serverjavaTeya.models.Course;
 import com.example.webDevfall2021serverjavaTeya.repositories.CourseRepository;
 
 @RestController
+@CrossOrigin(origins="*")
 public class CourseService {
 	@Autowired
 	CourseRepository courseRepository;
-	@CrossOrigin(origins="*")
 
 	@GetMapping("/api/course")
 	public Iterable<Course> findAllCourses() {
 		return courseRepository.findAll(); 
 	}
+	
 	@PostMapping("/api/course")
 	public Course createCourse(@RequestBody Course course) {
 		return courseRepository.save(course);
