@@ -5,6 +5,7 @@ import java.util.Optional;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.example.webDevfall2021serverjavaTeya.models.User;
 import com.example.webDevfall2021serverjavaTeya.repositories.UserRepository;
@@ -19,10 +22,20 @@ import com.example.webDevfall2021serverjavaTeya.repositories.UserRepository;
 import java.util.List;
 
 @RestController
+
 public class UserService {
 	
 	@Autowired
 	UserRepository userRepository;
+	@Bean
+	public WebMvcConfigurer WebMvcConfigure() {
+		return new WebMvcConfigurer() {
+			@Override
+			public void addCorsMappings(CorsRegistry registry) {
+				registry.addMapping("/login").allowedOrigins("http://localhost:3000").allowCredentials(true);
+			}
+		};
+	}
 	
 	@PostMapping("/register")
 	public User register(@RequestBody User user, HttpSession session) {
