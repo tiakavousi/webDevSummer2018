@@ -8,15 +8,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.example.webDevfall2021serverjavaTeya.models.Course;
 import com.example.webDevfall2021serverjavaTeya.repositories.CourseRepository;
 
 @RestController
-@CrossOrigin(origins="*")
+@CrossOrigin(origins="http://localhost:3000")
 public class CourseService {
 	@Autowired
 	CourseRepository courseRepository;
+	
+
 
 	@GetMapping("/api/course")
 	public Iterable<Course> findAllCourses() {
