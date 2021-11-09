@@ -1,5 +1,7 @@
 package com.example.webDevfall2021serverjavaTeya.services;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,8 +18,6 @@ import com.example.webDevfall2021serverjavaTeya.repositories.CourseRepository;
 public class CourseService {
 	@Autowired
 	CourseRepository courseRepository;
-	
-
 
 	@GetMapping("/api/course")
 	public Iterable<Course> findAllCourses() {
@@ -32,6 +32,10 @@ public class CourseService {
 	@DeleteMapping("/api/course/{courseId}")
 	public void deleteCourse(@PathVariable("courseId")int id) {
 		courseRepository.deleteById(id);
+	}
+	@GetMapping("/api/course/{courseId}")
+	public Optional<Course> findCourseById(@PathVariable("courseId") int id) {
+		return  courseRepository.findById(id);
 	}
 	
 }
