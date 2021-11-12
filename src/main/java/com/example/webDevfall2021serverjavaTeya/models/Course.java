@@ -22,6 +22,8 @@ public class Course {
 	private String title;
 	private String owner;
 	private String imgURL;
+	private String description;
+
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date created;
 	@Temporal(TemporalType.TIMESTAMP)
@@ -70,6 +72,12 @@ public class Course {
 	}
 	public void setImgURL(String imgURL) {
 		this.imgURL = imgURL;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
 }
