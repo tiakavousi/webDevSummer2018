@@ -12,11 +12,12 @@ public class Widget {
 	private int id;
 	private String title;
 	private String widgetType;
+	private double timestamp;
 //list widget
 	private String listItems;
 	private boolean ordered;
 	
-//widget u tube
+//widget youTube
 	private String src;
 	
 	
@@ -73,5 +74,13 @@ public class Widget {
 	public void setText(String text) {
 		this.text = text;
 	}
+	public double getTimestamp() {
+		return timestamp;
+	}
+	public void setTimestamp(double timestamp) {
+		this.timestamp = timestamp;
+	}
+	
+	
 
 }

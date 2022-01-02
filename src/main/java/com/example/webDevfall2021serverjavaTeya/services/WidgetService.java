@@ -13,17 +13,18 @@ import com.example.webDevfall2021serverjavaTeya.models.Widget;
 import com.example.webDevfall2021serverjavaTeya.repositories.WidgetRepository;
 
 @RestController
-@CrossOrigin(origins="http://localhost:3000/Widgets")
+@CrossOrigin(origins="http://localhost:3000")
 public class WidgetService {
 	@Autowired
 	WidgetRepository widgetRepository;
 	
 	@PostMapping("/api/widget")
 	public List<Widget> saveWidgets(@RequestBody List<Widget>widgets) {
-		List<Widget> saveWidgets= new ArrayList<Widget>();
+		List<Widget> savedWidgets= new ArrayList<Widget>();
+		widgetRepository.deleteAll();
 		for(Widget widget: widgets) {
-			saveWidgets.add(widgetRepository.save(widget));
+			savedWidgets.add(widgetRepository.save(widget));
 		}
-		return saveWidgets;
+		return savedWidgets;
 	}
 }
